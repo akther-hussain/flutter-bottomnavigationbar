@@ -30,7 +30,10 @@ class MyHomePage extends StatelessWidget {
               onPressed: () {}),
         ],
       ),
-      bottomNavigationBar: BottomNavCustom(),
+      bottomNavigationBar: SizedBox(
+        height: 90,
+        child: BottomNavCustom(),
+      ),
       body: Center(child: Text('Homepage!')),
       drawer: Drawer(
         // Add a ListView to the drawer. This ensures the user can scroll
@@ -90,6 +93,7 @@ class _BottomNavCustomState extends State<BottomNavCustom> {
         'Home',
         style: TextStyle(
           color: Color.fromRGBO(91, 55, 183, 1),
+            fontWeight: FontWeight.bold
         ),
       ),
       Color.fromRGBO(223, 215, 243, 1),
@@ -98,7 +102,7 @@ class _BottomNavCustomState extends State<BottomNavCustom> {
         Icon(Icons.favorite_border, color: Color.fromRGBO(201, 55, 157, 1)),
         Text(
           'Favorite',
-          style: TextStyle(color: Color.fromRGBO(201, 55, 157, 1)),
+          style: TextStyle(color: Color.fromRGBO(201, 55, 157, 1),fontWeight: FontWeight.bold),
         ),
         Color.fromRGBO(244, 211, 235, 1)),
     NavigationItem(
@@ -108,17 +112,16 @@ class _BottomNavCustomState extends State<BottomNavCustom> {
         ),
         Text(
           'Search',
-          style: TextStyle(color: Color.fromRGBO(230, 169, 25, 1)),
+          style: TextStyle(color: Color.fromRGBO(230, 169, 25, 1),fontWeight: FontWeight.bold),
         ),
         Color.fromRGBO(251, 239, 211, 1)),
     NavigationItem(
         Icon(Icons.person_outline, color: Color.fromRGBO(17, 148, 170, 1)),
         Text(
           'Profile',
-          style: TextStyle(color: Color.fromRGBO(17, 148, 170, 1)),
+          style: TextStyle(color: Color.fromRGBO(17, 148, 170, 1),fontWeight: FontWeight.bold),
         ),
         Color.fromRGBO(211, 235, 239, 1))
-
   ];
 
   Widget _buildItem(NavigationItem item, bool isSelected) {

@@ -81,10 +81,44 @@ class _BottomNavCustomState extends State<BottomNavCustom> {
   Color backgroundColorNav = Colors.white;
 
   List<NavigationItem> items = [
-    NavigationItem(Icon(Icons.home), Text('Home'), Colors.deepPurpleAccent),
-    NavigationItem(Icon(Icons.favorite_border), Text('Favorite'), Colors.pinkAccent),
-    NavigationItem(Icon(Icons.search), Text('Search'), Colors.amberAccent),
-    NavigationItem(Icon(Icons.person_outline), Text('Profile'), Colors.cyanAccent)
+    NavigationItem(
+      Icon(
+        Icons.home,
+        color: Color.fromRGBO(91, 55, 183, 1),
+      ),
+      Text(
+        'Home',
+        style: TextStyle(
+          color: Color.fromRGBO(91, 55, 183, 1),
+        ),
+      ),
+      Color.fromRGBO(223, 215, 243, 1),
+    ),
+    NavigationItem(
+        Icon(Icons.favorite_border, color: Color.fromRGBO(201, 55, 157, 1)),
+        Text(
+          'Favorite',
+          style: TextStyle(color: Color.fromRGBO(201, 55, 157, 1)),
+        ),
+        Color.fromRGBO(244, 211, 235, 1)),
+    NavigationItem(
+        Icon(
+          Icons.search,
+          color: Color.fromRGBO(230, 169, 25, 1),
+        ),
+        Text(
+          'Search',
+          style: TextStyle(color: Color.fromRGBO(230, 169, 25, 1)),
+        ),
+        Color.fromRGBO(251, 239, 211, 1)),
+    NavigationItem(
+        Icon(Icons.person_outline, color: Color.fromRGBO(17, 148, 170, 1)),
+        Text(
+          'Profile',
+          style: TextStyle(color: Color.fromRGBO(17, 148, 170, 1)),
+        ),
+        Color.fromRGBO(211, 235, 239, 1))
+
   ];
 
   Widget _buildItem(NavigationItem item, bool isSelected) {
@@ -136,7 +170,7 @@ class _BottomNavCustomState extends State<BottomNavCustom> {
           boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 4)]),
       width: MediaQuery.of(context).size.width,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: items.map((item) {
           var itemIndex = items.indexOf(item);
           return GestureDetector(
